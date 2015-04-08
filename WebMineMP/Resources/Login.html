@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>ログイン</title>
+    <style>
+        p#title {
+            background-color: lightblue;
+            color: blue;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        p#alert {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p id="title">ログイン</p>
+    <form class="form" action="login">
+        <p>ユーザー名:<input type="text" class="form" name="id" /></p>
+        <p>パスワード:<input type="password" class="form" name="pass" /></p>
+        <p><input type="submit" class="form" name="submit" /></p>
+        <p id="alert">PC側でユーザー名とパスワードを設定しないと、何を入力しても認証できません。</p>
+    </form>
+</body>
+</html>
