@@ -122,6 +122,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WMMPConfigEditor.vb" />
+    <Compile Include="WMMPHttpServer_self.vb" />
     <Compile Include="WMMPHttpServer.vb" />
   </ItemGroup>
   <ItemGroup>
