@@ -53,8 +53,9 @@ Public Class WMMPHttpServer_self
                     Next
                     e.SendToClient(enc.GetBytes(xd.ToString))
             End Select
-        ElseIf path = "command.html" Then
+        ElseIf path = "command" Then
             Check(queries, e)
+
         End If
     End Sub
     Function qtd(s As String) As IDictionary(Of String, String)
