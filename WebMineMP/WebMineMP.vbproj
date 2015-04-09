@@ -85,6 +85,12 @@
     <Compile Include="ConfigEditor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CredentialEditor.Designer.vb">
+      <DependentUpon>CredentialEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InitialSetting.Designer.vb">
       <DependentUpon>InitialSetting.vb</DependentUpon>
     </Compile>
@@ -128,6 +134,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ConfigEditor.resx">
       <DependentUpon>ConfigEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CredentialEditor.resx">
+      <DependentUpon>CredentialEditor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitialSetting.resx">
       <DependentUpon>InitialSetting.vb</DependentUpon>

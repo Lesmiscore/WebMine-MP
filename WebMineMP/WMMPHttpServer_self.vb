@@ -55,7 +55,8 @@ Public Class WMMPHttpServer_self
             End Select
         ElseIf path = "command" Then
             Check(queries, e)
-
+            form.SendCmd(Uri.EscapeUriString(queries("cmd")))
+            e.Response.RedirectLocation = "/main.html?page=1&rand=" & rndInt
         End If
     End Sub
     Function qtd(s As String) As IDictionary(Of String, String)

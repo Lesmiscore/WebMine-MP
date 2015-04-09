@@ -20,6 +20,8 @@ Public Class Main
                                             </html>.ToString)
     Friend sideload As New CollectionImpl(Of String)
     WithEvents lnhr As PMMPLauncher
+    Dim server As New WMMPHttpServer_self(Me)
+
     <Obsolete>
     Public Sub New()
         InitializeComponent()
@@ -172,5 +174,28 @@ Public Class Main
 
     Private Sub ConfigChanger_Click(sender As Object, e As EventArgs) Handles ConfigChanger.Click
         ConfigEditor.ShowDialog()
+    End Sub
+    Public Sub SendCmd(s As String)
+        lnhr.SendCommand(s)
+    End Sub
+
+    Private Sub StartWMMP_Click(sender As Object, e As EventArgs) Handles StartWMMP.Click
+        server.StartServer()
+        StopWMMP.Enabled = True
+        StartWMMP.Enabled = False
+    End Sub
+
+    Private Sub StopWMMP_Click(sender As Object, e As EventArgs) Handles StopWMMP.Click
+        server.StopServer()
+        StopWMMP.Enabled = True
+        StartWMMP.Enabled = False
+    End Sub
+
+    Private Sub SetCredentials_Click(sender As Object, e As EventArgs) Handles SetCredentials.Click
+        CredentialEditor.ShowDialog()
+    End Sub
+
+    Private Sub StartWMMPWhenAppStarted_CheckedChanged(sender As Object, e As EventArgs) Handles StartWMMPWhenAppStarted.CheckedChanged
+        WMMPConfigEditor.GetDefaultConfig("WMMPAutoStartEnabled") = StartWMMPWhenAppStarted.Checked
     End Sub
 End Class

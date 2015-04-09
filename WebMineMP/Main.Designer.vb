@@ -49,7 +49,7 @@ Partial Class Main
         Me.ConfigChanger = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.SetCredentials = New System.Windows.Forms.Button()
-        Me.StartWMPWhenAppStarted = New System.Windows.Forms.CheckBox()
+        Me.StartWMMPWhenAppStarted = New System.Windows.Forms.CheckBox()
         Me.StopWMMP = New System.Windows.Forms.Button()
         Me.StartWMMP = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
@@ -329,7 +329,7 @@ Partial Class Main
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.SetCredentials)
-        Me.GroupBox5.Controls.Add(Me.StartWMPWhenAppStarted)
+        Me.GroupBox5.Controls.Add(Me.StartWMMPWhenAppStarted)
         Me.GroupBox5.Controls.Add(Me.StopWMMP)
         Me.GroupBox5.Controls.Add(Me.StartWMMP)
         Me.GroupBox5.Location = New System.Drawing.Point(8, 6)
@@ -350,18 +350,19 @@ Partial Class Main
         Me.SetCredentials.Text = "ログイン情報を設定"
         Me.SetCredentials.UseVisualStyleBackColor = False
         '
-        'StartWMPWhenAppStarted
+        'StartWMMPWhenAppStarted
         '
-        Me.StartWMPWhenAppStarted.AutoSize = True
-        Me.StartWMPWhenAppStarted.Location = New System.Drawing.Point(200, 19)
-        Me.StartWMPWhenAppStarted.Name = "StartWMPWhenAppStarted"
-        Me.StartWMPWhenAppStarted.Size = New System.Drawing.Size(146, 28)
-        Me.StartWMPWhenAppStarted.TabIndex = 2
-        Me.StartWMPWhenAppStarted.Text = "アプリケーション開始時に、" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WebMine-MPを起動する"
-        Me.StartWMPWhenAppStarted.UseVisualStyleBackColor = True
+        Me.StartWMMPWhenAppStarted.AutoSize = True
+        Me.StartWMMPWhenAppStarted.Location = New System.Drawing.Point(200, 19)
+        Me.StartWMMPWhenAppStarted.Name = "StartWMMPWhenAppStarted"
+        Me.StartWMMPWhenAppStarted.Size = New System.Drawing.Size(146, 28)
+        Me.StartWMMPWhenAppStarted.TabIndex = 2
+        Me.StartWMMPWhenAppStarted.Text = "アプリケーション開始時に、" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WebMine-MPを起動する"
+        Me.StartWMMPWhenAppStarted.UseVisualStyleBackColor = True
         '
         'StopWMMP
         '
+        Me.StopWMMP.Enabled = False
         Me.StopWMMP.Location = New System.Drawing.Point(102, 19)
         Me.StopWMMP.Name = "StopWMMP"
         Me.StopWMMP.Size = New System.Drawing.Size(92, 23)
@@ -426,8 +427,8 @@ Partial Class Main
         '
         'ConsoleReader
         '
-        ConsoleReader.WorkerReportsProgress = True
-        ConsoleReader.WorkerSupportsCancellation = True
+        Me.ConsoleReader.WorkerReportsProgress = True
+        Me.ConsoleReader.WorkerSupportsCancellation = True
         '
         'Main
         '
@@ -483,7 +484,7 @@ Partial Class Main
     Friend WithEvents ReloadPMMP As System.Windows.Forms.Button
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents SetCredentials As System.Windows.Forms.Button
-    Friend WithEvents StartWMPWhenAppStarted As System.Windows.Forms.CheckBox
+    Friend WithEvents StartWMMPWhenAppStarted As System.Windows.Forms.CheckBox
     Friend WithEvents StopWMMP As System.Windows.Forms.Button
     Friend WithEvents StartWMMP As System.Windows.Forms.Button
     Friend WithEvents Console As System.Windows.Forms.WebBrowser
