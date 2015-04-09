@@ -249,5 +249,104 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Main_3", resourceCulture)
             End Get
         End Property
+        
+        '''<summary>
+        '''  &lt;html&gt;
+        '''&lt;head&gt;
+        '''    &lt;title&gt;メイン画面&lt;/title&gt;
+        '''    &lt;style&gt;
+        '''        #title {
+        '''            background-color: lightblue;
+        '''            color: blue;
+        '''            text-align: center;
+        '''            font-size: 30px;
+        '''        }
+        '''
+        '''        #alert {
+        '''            color: red;
+        '''            font-weight: bold;
+        '''        }
+        '''
+        '''        #main {
+        '''        }
+        '''
+        '''        #tabs {
+        '''            box-orient: horizontal;
+        '''            display: -moz-box;
+        '''            display: -webkit-box;
+        '''            -moz-box-orient: horizontal;
+        '''            -w [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property Main_Command() As String
+            Get
+                Return ResourceManager.GetString("Main_Command", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  &lt;html&gt;
+        '''&lt;head&gt;
+        '''    &lt;title&gt;メイン画面&lt;/title&gt;
+        '''    &lt;style&gt;
+        '''        #title {
+        '''            background-color: lightblue;
+        '''            color: blue;
+        '''            text-align: center;
+        '''            font-size: 30px;
+        '''        }
+        '''
+        '''        #alert {
+        '''            color: red;
+        '''            font-weight: bold;
+        '''        }
+        '''
+        '''        #main {
+        '''        }
+        '''
+        '''        #tabs {
+        '''            box-orient: horizontal;
+        '''            display: -moz-box;
+        '''            display: -webkit-box;
+        '''            -moz-box-orient: horizontal;
+        '''            -w [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property Main_Manage() As String
+            Get
+                Return ResourceManager.GetString("Main_Manage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  &lt;html&gt;
+        '''&lt;head&gt;
+        '''    &lt;title&gt;メイン画面&lt;/title&gt;
+        '''    &lt;style&gt;
+        '''        #title {
+        '''            background-color: lightblue;
+        '''            color: blue;
+        '''            text-align: center;
+        '''            font-size: 30px;
+        '''        }
+        '''
+        '''        #alert {
+        '''            color: red;
+        '''            font-weight: bold;
+        '''        }
+        '''
+        '''        #main {
+        '''        }
+        '''
+        '''        #tabs {
+        '''            box-orient: horizontal;
+        '''            display: -moz-box;
+        '''            display: -webkit-box;
+        '''            -moz-box-orient: horizontal;
+        '''            -w [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property Main_Output() As String
+            Get
+                Return ResourceManager.GetString("Main_Output", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace

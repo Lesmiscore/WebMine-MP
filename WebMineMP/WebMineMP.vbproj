@@ -159,6 +159,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Main_Command.html" />
+    <Content Include="Resources\Main_Manage.html" />
+    <Content Include="Resources\Main_Output.html" />
     <Content Include="Resources\Main_3.html" />
     <Content Include="Resources\Main_frame.html" />
     <Content Include="Resources\Main_2.html" />

@@ -37,11 +37,11 @@ Public Class WMMPHttpServer_self
             Check(queries, e)
             Select Case Integer.Parse(queries("page"))
                 Case 1
-                    e.SendToClient(enc.GetBytes(My.Resources.Main_1.Replace("*RAND*", rndInt)))
+                    e.SendToClient(enc.GetBytes(My.Resources.Main_Command.Replace("%RAND%", rndInt)))
                 Case 2
-                    e.SendToClient(enc.GetBytes(My.Resources.Main_2.Replace("*RAND*", rndInt)))
+                    e.SendToClient(enc.GetBytes(My.Resources.Main_Manage.Replace("%RAND%", rndInt)))
                 Case 3
-                    Dim xd As XDocument = XDocument.Parse(My.Resources.Main_3.Replace("*RAND*", rndInt))
+                    Dim xd As XDocument = XDocument.Parse(My.Resources.Main_Output.Replace("%RAND%", rndInt))
                     Dim node = (From i In xd.<html>.<body>.<div>.<div> Where i.@id = "console").First
                     For Each i In form.sideload
                         node.Add(Function(s As String) As XNode

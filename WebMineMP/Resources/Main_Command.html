@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>メイン画面</title>
+    <style>
+        #title {
+            background-color: lightblue;
+            color: blue;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #alert {
+            color: red;
+            font-weight: bold;
+        }
+
+        #main {
+        }
+
+        #tabs {
+            box-orient: horizontal;
+            display: -moz-box;
+            display: -webkit-box;
+            -moz-box-orient: horizontal;
+            -webkit-box-orient: horizontal;
+            box-align: center;
+            -webkit-box-align: center;
+        }
+
+        #tabs_1 {
+            background: #c3c3c3;
+            box-flex: 1;
+            -webkit-box-flex: 1;
+        }
+
+        #tabs_2 {
+            background: #d4d4d4;
+            box-flex: 1;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+        }
+
+        #tabs_3 {
+            background: #c3c3c3;
+            box-flex: 1;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <p id="title">メイン画面</p>
+    <div id="main">
+        <div id="tabs">
+            <a href="/main.html?rand=%RAND%&page=1" id="tabs_1">Pocket-Mine MP</a>
+            <a href="/main.html?rand=%RAND%&page=2" id="tabs_2">Web-Mine MP</a>
+            <a href="/main.html?rand=%RAND%&page=3" id="tabs_3">Pocket-Mine MP コンソール出力</a>
+        </div>
+    </div>
+	<form ></form>
+</body>
+</html>
