@@ -166,7 +166,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AnythingTools.dll" />
+    <Content Include="Dependencies\AnythingTools.dll" />
     <Content Include="Resources\Main_Command.html" />
     <Content Include="Resources\Main_Manage.html" />
     <Content Include="Resources\Main_Output.html" />
