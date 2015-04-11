@@ -6,7 +6,6 @@ Imports System.IO
 
 Public Class WMMPHttpServer_self
     Inherits HttpServer
-    Dim wr As New WeakReference(Of UTF8Encoding)(New UTF8Encoding(False))
     Dim rndInt As UInteger = AdvancedStream.ConvertToAdvancedStream(StrictRandomStream.Instance).ReadUInt
     Dim form As Main
     Public Sub New(f As Main)
@@ -60,6 +59,9 @@ Public Class WMMPHttpServer_self
         End If
     End Sub
     Function qtd(s As String) As IDictionary(Of String, String)
+        If Not s.Contains("?") Then
+            Return New DictionaryImpl(Of String, String)
+        End If
         s = s.Split("?"c).Last
         Dim dic As New DictionaryImpl(Of String, String)
         For Each i In s.Split("&"c)
@@ -70,14 +72,8 @@ Public Class WMMPHttpServer_self
     Function dec(s As String) As String
         Return enc.GetString(Convert.FromBase64String(s))
     End Function
-    Function enc() As UTF8Encoding
-        enc = Nothing
-        wr.TryGetTarget(enc)
-        If enc Is Nothing Then
-            wr.SetTarget(New UTF8Encoding(False))
-            wr.TryGetTarget(enc)
-        End If
-        Return enc
+    Function enc() As Encoding
+        Return Encoding.GetEncoding(932) '決め打ち
     End Function
     Public Sub ResetRnd()
         Static strm = AdvancedStream.ConvertToAdvancedStream(New BufferedStream(StrictRandomStream.Instance))
