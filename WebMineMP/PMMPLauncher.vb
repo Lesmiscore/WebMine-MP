@@ -29,7 +29,7 @@ Public Class PMMPLauncher
         psi.UseShellExecute = False
 
         psi.FileName = info.PhpPath
-        psi.Arguments = "-c bin\php """ & info.PMMPPharPath & """"
+        psi.Arguments = """" & info.PMMPPharPath & """"
         proc = New Process()
         proc.StartInfo = psi
         AddHandler proc.Exited, Sub()
