@@ -1,9 +1,11 @@
 ﻿Imports System.Text
 Imports System.IO
+Imports System.ComponentModel
 
 Public Class PMMPLauncher
     Dim info As PMMPInfo
     Dim proc As Process
+    WithEvents waiter As New BackgroundWorker
     Private Sub New(info As PMMPInfo)
         If info Is Nothing Then
             Throw New ArgumentNullException("info")
@@ -29,7 +31,7 @@ Public Class PMMPLauncher
         psi.UseShellExecute = False
 
         psi.FileName = info.PhpPath
-        psi.Arguments = """" & info.PMMPPharPath & """"
+        psi.Arguments = "-c bin\php """ & info.PMMPPharPath & """"
         proc = New Process()
         proc.StartInfo = psi
         AddHandler proc.Exited, Sub()
@@ -85,9 +87,12 @@ Public Class PMMPLauncher
             If IsPrepared Then
                 Return False
             End If
-            Return Not proc.HasExited
+            Return Not proc.HasExited Or waiter.IsBusy
         End Get
     End Property
     Public Event OnStopped()
     Public Event OnStarted()
+    Private Sub waitThread(sender As Object, e As DoWorkEventArgs) Handles waiter.DoWork
+        proc.WaitForExit()
+    End Sub
 End Class
